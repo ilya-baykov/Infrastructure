@@ -1,9 +1,5 @@
 def normalize(vector: list[float]) -> list[float]:
     """"
-        Возвращает нормализованный вектор по формуле normalized_v = v / ||v||, где
-        ||v|| = ||v|| = sqrt(v₁² + v₂² + ... + vₙ²).
+        Возвращает нормализованный вектор по формуле x / sum(|x1| + |x2| + ... + |xn|)
     """
-    return [int(i) / (sum([int(i) ** 2 for i in vector])) ** 0.5 for i in vector]
-
-
-print(normalize([1, 2, 3]))
+    return [int(i) / sum([abs(int(elem)) for elem in vector]) for i in vector]
